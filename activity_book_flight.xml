@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homepage"
+    tools:context=".BookFlightActivity">
+
+    <TextView
+        android:id="@+id/AvailableSeatsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="AVAILABLE \nSEATS"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/pickASeatBG"
+        android:layout_width="380dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="11dp"
+        android:background="#E7EBFA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PickASeatTV" />
+
+    <Button
+        android:id="@+id/buttonSeat2"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="2"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeat1"
+        app:layout_constraintTop_toTopOf="@+id/pickASeatBG" />
+
+    <Button
+        android:id="@+id/buttonSeat6"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="6"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeat5"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat4" />
+
+    <Button
+        android:id="@+id/buttonSeat8"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="8"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeat7"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat6" />
+
+    <Button
+        android:id="@+id/buttonSeat10"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="10"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeat9"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat8" />
+
+    <Button
+        android:id="@+id/buttonSeat4"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="4"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeat3"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat2" />
+
+    <Button
+        android:id="@+id/buttonSeat7"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="7"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat5" />
+
+    <Button
+        android:id="@+id/buttonSeat1"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toTopOf="@+id/pickASeatBG" />
+
+    <Button
+        android:id="@+id/buttonSeat9"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="9"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat7" />
+
+    <Button
+        android:id="@+id/buttonSeat5"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="5"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat3" />
+
+    <Button
+        android:id="@+id/buttonSeat3"
+        android:layout_width="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_square_button"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat1" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:background="#D32F2F"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@android:string/cancel"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/pickASeatBG"
+        app:layout_constraintStart_toStartOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeat9" />
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="14dp"
+        android:background="#5271FF"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="CONFIRM"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/pickASeatBG"
+        app:layout_constraintEnd_toEndOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toBottomOf="@+id/pickASeatExpTV" />
+
+    <TextView
+        android:id="@+id/PickASeatTV"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="134dp"
+        android:background="#5271FF"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="PICK A SEAT"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AvailableSeatsTV" />
+
+    <TextView
+        android:id="@+id/pickASeatExpTV"
+        android:layout_width="149dp"
+        android:layout_height="241dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/pick_a_seat_exp"
+        app:layout_constraintEnd_toEndOf="@+id/pickASeatBG"
+        app:layout_constraintTop_toTopOf="@+id/pickASeatBG" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
