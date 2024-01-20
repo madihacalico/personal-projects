@@ -1,0 +1,135 @@
+package com.example.cloudairlinesbookflight;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BookFlightActivity extends AppCompatActivity {
+
+    private ArrayList<Button> seatButtons;
+    private Queue<Passenger> waitingList;
+    private ArrayList<Passenger> confirmedTickets;
+
+    private Button selectedSeatButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_flight);
+
+        initializeViews();
+        initializeData();
+
+        // Set click listeners for seat buttons
+        for (Button seatButton : seatButtons) {
+            seatButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    handleSeatButtonClick((Button) view);
+                }
+            });
+        }
+
+        // Set click listeners for Confirm and Cancel buttons
+        Button confirmButton = findViewById(R.id.buttonConfirm);
+        Button cancelButton = findViewById(R.id.buttonCancel);
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleConfirmButtonClick();
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Close the activity and go back to the search flight activity
+            }
+        });
+    }
+
+    private void initializeViews() {
+        // Initialize your seat buttons here
+        seatButtons = new ArrayList<>();
+        seatButtons.add(findViewById(R.id.buttonSeat1));
+        seatButtons.add(findViewById(R.id.buttonSeat2));
+        seatButtons.add(findViewById(R.id.buttonSeat3));
+        seatButtons.add(findViewById(R.id.buttonSeat4));
+        seatButtons.add(findViewById(R.id.buttonSeat5));
+        seatButtons.add(findViewById(R.id.buttonSeat6));
+        seatButtons.add(findViewById(R.id.buttonSeat7));
+        seatButtons.add(findViewById(R.id.buttonSeat8));
+        seatButtons.add(findViewById(R.id.buttonSeat9));
+        seatButtons.add(findViewById(R.id.buttonSeat10));
+    }
+
+    private void initializeData() {
+        // Initialize your data structures here
+        waitingList = new LinkedList<>();
+        confirmedTickets = new ArrayList<>();
+    }
+
+    private void handleSeatButtonClick(Button seatButton) {
+        // Reset color for previously selected seat
+        if (selectedSeatButton != null) {
+            selectedSeatButton.setBackgroundResource(R.drawable.rounded_square_button);
+        }
+
+        // Change color for the newly selected seat
+        seatButton.setBackgroundResource(R.drawable.selected_rounded_square_button);
+
+        // Update the selected seat
+        selectedSeatButton = seatButton;
+    }
+
+    private void handleConfirmButtonClick() {
+        if (selectedSeatButton == null) {
+            // No seat selected, handle accordingly
+            // You may display a message to the user
+            return;
+        }
+
+        // Extract passenger information (replace with your logic to get passenger details)
+        Passenger passenger = new Passenger("John Doe", "123456", "IC123", "ABCD1234");
+
+        // Check if the seat is available
+        if (isSeatAvailable(selectedSeatButton)) {
+            // Seat is available, add passenger to confirmed tickets list
+            confirmedTickets.add(passenger);
+
+            // Update UI to show the seat as occupied
+            selectedSeatButton.setBackgroundResource(R.drawable.occupied_rounded_square_button);
+        } else {
+            // Seat is not available, add passenger to waiting list
+            waitingList.add(passenger);
+        }
+
+        // Clear the selected seat
+        selectedSeatButton = null;
+    }
+
+    private boolean isSeatAvailable(Button seatButton) {
+        // Implement your logic to check if the seat is available
+        // For simplicity, you may use the background resource to determine availability
+        return seatButton.getBackground().getConstantState().equals(getResources().getDrawable(R.drawable.rounded_square_button).getConstantState());
+    }
+
+    private class Passenger {
+        private String name;
+        private String phoneNum;
+        private String ic;
+        private String passportNum;
+
+        public Passenger(String name, String phoneNum, String ic, String passportNum) {
+            this.name = name;
+            this.phoneNum = phoneNum;
+            this.ic = ic;
+            this.passportNum = passportNum;
+        }
+    }
+}
